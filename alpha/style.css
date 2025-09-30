@@ -27,8 +27,6 @@ html{
     --pararaph-color: #2E2E2E;
 
     background-color: var(--background-color);
-    margin-inline: 64px;
-    margin-block: 64px;
 }
 
 h1 {
@@ -117,5 +115,29 @@ h2:nth-of-type(5) {
 }
 
 .gif {
+    display: block;
+    max-width: 100%;
+    height: auto;
     margin-bottom: 42px;
+}
+
+@media (min-width: 1512px) {
+    body {
+        margin-inline: 62px;
+        margin-block: 62px;
+    }
+}
+
+@media (min-width: 834px) and (max-width: 1512px) {
+    body {
+        margin-inline: 62px;
+        margin-block: 62px;
+    }
+}
+
+@media (min-width: 330px) and (max-width: 834px) {
+    body {
+        margin-inline: 42px;
+        margin-block: 42px;
+    }
 }
