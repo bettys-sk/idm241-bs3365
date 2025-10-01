@@ -95,7 +95,7 @@ a.hover-link {
 }
 
 .index-hover-link {
-    color: var(--primary-color);
+    color: var(--hover-color);
     text-decoration: none;
 }
 
