@@ -23,7 +23,7 @@ html{
     --background-color: #FCFBF8;
     --stroke-color: #D2D2D2;
     --primary-color: #47799A;
-    --hover-color: #6A7D4F
+    --hover-color: #6A7D4F;
     --pararaph-color: #2E2E2E;
 
     background-color: var(--background-color);
@@ -85,13 +85,23 @@ a.hover-link {
     text-decoration: none;
 }
 
-a.hover-link:hover {
+.hover-link:hover {
     color: var(--hover-color);
     text-decoration: underline;
 }
 
-a.hover-link:visited {
+.hover-link:visited {
     color: #4A4A4A;
+}
+
+.index-hover-link {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.index-hover-link:hover {
+    color: #4A4A4A;
+    text-decoration: underline;
 }
 
 h2:nth-of-type(2),
@@ -108,10 +118,24 @@ h2:nth-of-type(5) {
     margin-bottom: 42px;
 }
 
+.index-og-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 42px 0 24px 0;
+}
+
+.index-arrow-icon {
+    width: 32px;
+    height: auto;
+    padding-bottom: 4px;
+}
+
 .arrow-icon {
     width: 24px;
     height: auto;
     padding-top: 8px;
+    color: var(--primary-color);
 }
 
 .gif {
