@@ -90,17 +90,17 @@ a.hover-link {
     text-decoration: underline;
 }
 
-.hover-link:visited {
+/* .hover-link:visited {
     color: #4A4A4A;
-}
+} */
 
 .index-hover-link {
-    color: var(--hover-color);
+    color: var(--primary-color);
     text-decoration: none;
 }
 
 .index-hover-link:hover {
-    color: #4A4A4A;
+    color: var(--hover-color);
     text-decoration: underline;
 }
 
