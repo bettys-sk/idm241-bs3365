@@ -178,6 +178,7 @@ h2:nth-of-type(5) {
 .pin-card {
     position: relative;
     display: block;
+    cursor: pointer;
 }
 
 .img-tile-container {
