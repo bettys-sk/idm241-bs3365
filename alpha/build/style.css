@@ -102,10 +102,6 @@ a.hover-link {
     text-decoration: underline;
 }
 
-/* .hover-link:visited {
-    color: #4A4A4A;
-} */
-
 .index-hover-link {
     color: var(--primary-color);
     text-decoration: none;
@@ -192,6 +188,7 @@ h2:nth-of-type(5) {
     height: auto;
     display: block;
     border-radius: 17px;
+    cursor: pointer;
 }
 
 .overlay {
@@ -204,6 +201,7 @@ h2:nth-of-type(5) {
     opacity: 0;
     transition: opacity 0s;
     border-radius: 16px;
+    cursor: pointer;
 }
 
 .img-tile-container:hover .overlay {
