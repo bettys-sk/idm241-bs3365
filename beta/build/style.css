@@ -254,7 +254,7 @@ h2:nth-of-type(5) {
 }
 
 .share-btn:hover {
-    background-color: #F1F1E7;
+    background-color: #DAF0FF;
 }
 
 .share-btn:hover .share-icon {
@@ -371,7 +371,7 @@ h2:nth-of-type(5) {
 }
 
 .option-btn:hover {
-    background-color: #F6F6F3;
+    background-color: #EFEFEF;
 }
 
 .tooltip {
