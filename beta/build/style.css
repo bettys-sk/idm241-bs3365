@@ -1,0 +1,432 @@
+@font-face {
+    font-family: Stick No Bills;
+    src: url(../typography/Stick\ No\ Bills\ Variable\ Font.woff2);
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Geist Mono;
+    src: url(./typography/Geist\ Mono\ Variable\ Font.woff2);
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Manrope;
+    src: url(../typography/Manrope\ Medium.woff2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html{
+    --background-color: #FCFBF8;
+    --stroke-color: #D2D2D2;
+    --primary-color: #47799A;
+    --hover-color: #6A7D4F;
+    --pararaph-color: #2E2E2E;
+
+    background-color: var(--background-color);
+}
+
+h1 {
+    font-family: Stick No Bills, 'Times New Roman', Times, serif;
+    font-size: 62px;
+    color: var(--primary-color);
+    margin: 62px 0 32px 0;
+}
+
+h2 {
+    font-family: Stick No Bills, 'Times New Roman', Times, serif;
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+h3 {
+    font-family: Stick No Bills, 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-top: 8px;
+}
+
+h4 {
+    font-family: Stick No Bills, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: var(--primary-color);
+    margin: 16px 0 8px 0;
+}
+
+p {
+    font-family: Manrope, 'Courier New', Courier, monospace;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: -.7px;
+    line-height: 20px;
+    color: var(--pararaph-color);
+}
+
+ul {
+  list-style-position: inside;
+  padding-left: 0;
+  margin-left: 12px;
+}
+
+hr {
+    border: none;
+    border-top: 2px dotted #47799A;
+    margin: 62px 0 62px 0;
+}
+
+.space {
+    margin-bottom: 42px;
+}
+
+li  {
+    font-family: Geist Mono, 'Courier New', Courier, monospace;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: -.7px;
+    line-height: 20px;
+    color: var(--pararaph-color);
+}
+
+a.hover-link {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.hover-link:hover {
+    color: var(--hover-color);
+    text-decoration: underline;
+}
+
+.index-hover-link {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.index-hover-link:hover {
+    color: var(--hover-color);
+    text-decoration: underline;
+}
+
+h2:nth-of-type(2),
+h2:nth-of-type(3),
+h2:nth-of-type(4),
+h2:nth-of-type(5) {
+    margin-top: 32px;
+}
+
+.og-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 42px;
+}
+
+.index-og-link-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 42px 0 24px 0;
+}
+
+.index-og-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 24px 0 24px 0;
+}
+
+.index-arrow-icon {
+    width: 32px;
+    height: auto;
+    padding-bottom: 4px;
+}
+
+.arrow-icon {
+    width: 24px;
+    height: auto;
+    padding-top: 8px;
+    color: var(--primary-color);
+}
+
+.gif {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 42px auto 0;
+}
+
+
+/* code for pinterest image cards */
+
+.pin-grid {
+    display: grid;
+    gap: 42px 16px;
+    max-width: 100%;
+    margin: auto 0;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.pin-card {
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+.img-tile-container {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.img-tile {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 17px;
+    cursor: pointer;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    opacity: 0;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.img-tile-container:hover .overlay {
+    opacity: 1;
+}
+
+.icon-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.share-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: background-color 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
+    z-index: 10;
+}
+
+.img-tile-container:hover .share-btn {
+    opacity: 1;
+}
+
+/* share btn animation */
+.share-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.25s ease;
+}
+
+.share-btn:hover {
+    background-color: #F1F1E7;
+}
+
+.share-btn:hover .share-icon {
+    transform: scale(1.15);
+}
+
+/* .share-btn:active {
+    transform: scale(0.95);
+} */
+/* share btn animation */
+
+.pin-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.option-icon {
+    width: 16px;
+    height: 4px;
+    display: block;
+    position: static;
+    transform: none;
+    margin: auto;
+}
+
+.card-info {
+    position: relative;
+    margin: 12px 12px 0 0;
+    cursor: pointer;
+    min-height: 20px;
+}
+
+/* title text animation */
+.card-info .title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+}
+
+.card-info .title span {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.card-info .title span::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.6) 50%,
+        rgba(255,255,255,0) 100%
+    );
+    transform: skewX(-20deg);
+    z-index: 2;
+}
+
+.card-info .title:hover span {
+    animation: smoothType 1s ease-out forwards;
+}
+
+.card-info .title:hover span::before {
+    animation: shine 1s forwards;
+}
+
+@keyframes smoothType {
+    from { clip-path: inset(0 100% 0 0); }
+    to { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes shine {
+    from { left: -100%; }
+    to { left: 100%; }
+}
+/* title text animation */
+
+
+/* option icon animation */
+.card-info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.option-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+}
+
+.option-btn:hover .option-icon {
+    transform: scale(1.2);
+    transition: transform 0.2s ease;
+}
+
+.option-btn:hover {
+    background-color: #F6F6F3;
+}
+
+.tooltip {
+    position: absolute;
+    top: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #DAF0FF;
+    color: #323232;
+    padding: 8px 8px;
+    border-radius: 8px;
+    font-family: Manrope, 'Courier New', Courier, monospace;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transform-origin: top center;
+}
+
+.option-btn:hover .tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(5px);
+}
+/* option icon animation */
+
+
+@media (min-width: 1512px) {
+    body {
+        margin-inline: 62px;
+        margin-block: 62px;
+    }
+
+    .pin-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 834px) and (max-width: 1512px) {
+    body {
+        margin-inline: 62px;
+        margin-block: 62px;
+    }
+
+    .pin-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 110px) and (max-width: 834px) {
+    body {
+        margin-inline: 42px;
+        margin-block: 42px;
+    }
+
+    .pin-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
