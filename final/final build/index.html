@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final_Build</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="pin-grid">
+  <!-- CARD 1 -->
+  <div class="pin-card">
+    <div class="img-tile-container">
+      <img class="img-tile" src="./images/1.jpg" alt="horse riding graphic">
+
+      <!-- overlay -->
+      <div class="overlay"></div>
+
+      <!-- saved message -->
+      <div class="saved-message">Saved to Board</div>
+
+      <!-- confetti canvas -->
+      <canvas class="confetti"></canvas>
+
+      <!-- pin save btn -->
+      <div class="icon-btn">
+        <img class="pin-icon" src="./images/pin.png" alt="pin icon">
+      </div>
+
+      <!-- share btn -->
+      <div class="share-btn">
+        <img class="share-icon" src="./images/share.png" alt="share icon">
+      </div>
+    </div>
+
+    <!-- card title and option icon -->
+    <div class="card-info">
+      <p class="title"><span>roller coaster ride</span></p>
+      <div class="option-btn">
+        <img class="option-icon" src="./images/options.png" alt="options three dot icon">
+        <span class="tooltip">More actions</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="pin-card">
+    <div class="img-tile-container">
+      <img class="img-tile" src="./images/2.jpg" alt="camel graphic">
+
+      <!-- overlay -->
+      <div class="overlay"></div>
+
+      <!-- saved message -->
+      <div class="saved-message">Saved to Board</div>
+
+      <!-- confetti canvas -->
+      <canvas class="confetti"></canvas>
+
+      <!-- pin save btn -->
+      <div class="icon-btn">
+        <img class="pin-icon" src="./images/pin.png" alt="pin icon">
+      </div>
+
+      <!-- share btn -->
+      <div class="share-btn">
+        <img class="share-icon" src="./images/share.png" alt="share icon">
+      </div>
+    </div>
+
+    <!-- card title and option icon -->
+    <div class="card-info">
+      <p class="title"><span>height of the skies</span></p>
+      <div class="option-btn">
+        <img class="option-icon" src="./images/options.png" alt="options three dot icon">
+        <span class="tooltip">More actions</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="pin-card">
+    <div class="img-tile-container">
+      <img class="img-tile" src="./images/3.jpg" alt="monkey cartoon character illustration">
+
+      <!-- overlay -->
+      <div class="overlay"></div>
+
+      <!-- saved message -->
+      <div class="saved-message">Saved to Board</div>
+
+      <!-- confetti canvas -->
+      <canvas class="confetti"></canvas>
+
+      <!-- pin save btn -->
+      <div class="icon-btn">
+        <img class="pin-icon" src="./images/pin.png" alt="pin icon">
+      </div>
+
+      <!-- share btn -->
+      <div class="share-btn">
+        <img class="share-icon" src="./images/share.png" alt="share icon">
+      </div>
+    </div>
+
+    <!-- card title and option icon -->
+    <div class="card-info">
+      <p class="title"><span>afternoon rain shower</span></p>
+      <div class="option-btn">
+        <img class="option-icon" src="./images/options.png" alt="options three dot icon">
+        <span class="tooltip">More actions</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<hr>
+
+<!-- Microinteraction Description -->
+    <h1>Final Build</h1>
+
+    <h2>Triggers</h2>
+        <ul>
+            <h4>Image Tile</h4>
+                <li>Hover on</li>
+                <li>Hover off</li>
+
+            <h4>Image Tile Text Title</h4>
+                <li>Hover on</li>
+                <li>Hover off</li>
+
+            <h4>Share Button</h4>
+                <li>Hover on</li>
+                <li>Hover off</li>
+            <h4>More Actions Button</h4>
+                <li>Hover on</li>
+                <li>Hover off</li>
+        </ul>
+
+    <hr>
+
+    <h2>Rules</h2>
+        <ul>
+        <div class="space">
+            <h4>Hover On Image Tile</h4>
+                <li>Cursor turns to pointer</li>
+                <li>Dark transparent overlay fades in on top of the image</li>
+                <li>Share icon button appears on the bottom right of the image tile</li>
+
+            <h4>Hover Off Image Tile</h4>
+                <li>Pointer turns back to cursor</li>
+                <li>Dark transparent overlay fades off</li>
+                <li>Share icon button disappears</li>
+        </div>
+
+        <div class="space">
+            <h4>Hover On Image Tile Text Title</h4>
+                <li>Text plays a typewriter effect with shine glimmer</li>
+
+            <h4>Hover Off Image Tile Text Title</h4>
+                <li>Text returns to static title text</li>
+        </div>
+
+        <div class="space">
+            <h4>Hover On Share Button</h4>
+                <li>Change button background color</li>
+                <li>Increase the scale (size) of the share icon</li>
+
+            <h4>Hover Off Share Button</h4>
+                <li>Reset button background color to default</li>
+                <li>Reset share icon scale to default</li>
+        </div>
+
+        <div class="space">
+            <h4>Hover On More Actions Button</h4>
+                <li>Change button background color</li>
+                <li>Increase the scale of the icon</li>
+                <li>Tooltip “More actions” fades in from top to bottom</li>
+
+            <h4>Hover Off More Actions Button</h4>
+                <li>Reset button background color to default</li>
+                <li>Reset icon scale to default</li>
+                <li>Tooltip “More actions” fades off from bottom to top</li>
+        </div>
+        </ul>
+
+    <hr>
+
+    <h2>Feedback</h2>
+        <ul>
+        <div class="space">
+            <h4>Hover On Image Tile</h4>
+                <li>Cursor turns to pointer</li>
+                <li>Dark transparent overlay fades in on top of the image</li>
+                <li>Share icon button appears on the bottom right of the image tile</li>
+
+            <h4>Hover Off Image Tile</h4>
+                <li>Pointer turns back to cursor</li>
+                <li>Dark transparent overlay fades off</li>
+                <li>Share icon button disappears</li>
+        </div>
+
+        <div class="space">
+            <h4>Hover On Image Tile Text Title</h4>
+                <li>Text plays a typewriter effect with shine glimmer</li>
+
+            <h4>Hover Off Image Tile Text Title</h4>
+                <li>Text returns to static title text</li>
+        </div>
+
+        <div class="space">
+            <h4>Hover On Share Button</h4>
+                <li>Change button background color</li>
+                <li>Increase the scale (size) of the share icon</li>
+
+            <h4>Hover Off Share Button</h4>
+                <li>Reset button background color to default</li>
+                <li>Reset share icon scale to default</li>
+        </div>
+
+        <div class="space">
+            <h4>Hover On More Actions Button</h4>
+                <li>Change button background color</li>
+                <li>Increase the scale of the icon</li>
+                <li>Tooltip “More actions” fades in from top to bottom</li>
+
+            <h4>Hover Off More Actions Button</h4>
+                <li>Reset button background color to default</li>
+                <li>Reset icon scale to default</li>
+                <li>Tooltip “More actions” fades off from bottom to top</li>
+        </div>
+        </ul>
+
+    <hr>
+
+    <h2>Loops & Modes</h2>
+        <ul>
+            <li>No loops</li>
+            <li>No modes</li>
+        </ul>
+<!-- Microinteraction Description -->
+
+</body>
+</html>
+
+
+<!-- JAVASCRIPT FOR CONFETTI AND SAVED POPUP -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".pin-card");
+
+    cards.forEach(card => {
+        const pinBtn = card.querySelector(".icon-btn");
+        const confettiCanvas = card.querySelector(".confetti");
+
+        pinBtn.addEventListener("click", () => {
+        if (card.classList.contains("saved")) return;
+
+        card.classList.add("saved");
+
+        const pinIcon = pinBtn.querySelector(".pin-icon");
+        pinIcon.src = "./images/check.png";
+
+        launchConfetti(confettiCanvas);
+
+            setTimeout(() => {
+            card.classList.remove("saved");
+            const ctx = confettiCanvas.getContext('2d');
+            ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+            }, 900);
+        });
+    });
+
+    function launchConfetti(canvas) {
+    const ctx = canvas.getContext("2d");
+    const w = canvas.width = canvas.offsetWidth;
+    const h = canvas.height = canvas.offsetHeight;
+  
+    const pieces = Array.from({ length: 40 }, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h - h / 2,
+        width: Math.random() * 4 + 2,
+        height: Math.random() * 10 + 6,
+        color: "#EFEFEF",   
+        speedX: (Math.random() - 0.5) * 3,
+        speedY: Math.random() * 3 + 2,
+        rotation: Math.random() * 2 * Math.PI,
+        rotationSpeed: (Math.random() - 0.5) * 0.2,
+        alpha: 0.3,
+    }));
+
+    const duration = 800;
+    const fadeStart = 600;
+    const startTime = performance.now();
+
+    function update(time) {
+        const elapsed = time - startTime;
+        ctx.clearRect(0, 0, w, h);
+
+        pieces.forEach(p => {
+        p.x += p.speedX;
+        p.y += p.speedY;
+        p.rotation += p.rotationSpeed;
+
+        if (elapsed > fadeStart) {
+            const fadeProgress = (elapsed - fadeStart) / (duration - fadeStart);
+            p.alpha = Math.max(0, 0.3 * (1 - fadeProgress));
+        }
+
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rotation);
+        ctx.globalAlpha = p.alpha;
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.width / 2, -p.height / 2, p.width, p.height);
+        ctx.restore();
+        });
+
+        if (elapsed < duration) {
+        requestAnimationFrame(update);
+        } else {
+        ctx.clearRect(0, 0, w, h);
+        }
+    }
+
+    requestAnimationFrame(update);
+    }
+});
+</script>
