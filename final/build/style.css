@@ -502,11 +502,6 @@ h2:nth-of-type(5) {
   margin-bottom: 4px;
 }
 
-.share-option:hover {
-  transform: scale(1.1);
-  color: var(--primary-color);
-}
-
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(5px); }
   to { opacity: 1; transform: translateY(0); }
