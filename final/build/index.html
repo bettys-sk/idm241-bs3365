@@ -469,16 +469,25 @@
 
     if (shareBtn) {
         const popup = shareBtn.parentElement.querySelector('.share-popup');
+        const pinCard = shareBtn.closest('.pin-card');
         const isOpen = popup.classList.contains('show-popup');
 
+        // close all popups first
         allPopups.forEach(p => p.classList.remove('show-popup'));
 
+        // toggle current one
         if (!isOpen) {
         popup.classList.add('show-popup');
         }
 
+        // add scaling animation for share button
         shareBtn.classList.add('clicked');
         setTimeout(() => shareBtn.classList.remove('clicked'), 150);
+
+        // hide popup when hovering off the pin card
+        pinCard.addEventListener('mouseleave', () => {
+        popup.classList.remove('show-popup');
+        });
 
         e.stopPropagation();
     }
