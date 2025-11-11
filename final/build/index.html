@@ -9,40 +9,61 @@
 <body>
 
 <div class="pin-grid">
-  <!-- CARD 1 -->
-  <div class="pin-card">
+    <!-- CARD 1 -->
+    <div class="pin-card">
     <div class="img-tile-container">
-      <img class="img-tile" src="./images/1.jpg" alt="horse riding graphic">
+        <img class="img-tile" src="./images/1.jpg" alt="horse riding graphic">
 
-      <!-- overlay -->
-      <div class="overlay"></div>
+        <!-- overlay -->
+        <div class="overlay"></div>
 
-      <!-- saved message -->
-      <div class="saved-message">Saved to Board</div>
+        <!-- saved message -->
+        <div class="saved-message">Saved to Board</div>
 
-      <!-- confetti canvas -->
-      <canvas class="confetti"></canvas>
+        <!-- confetti canvas -->
+        <canvas class="confetti"></canvas>
 
-      <!-- pin save btn -->
-      <div class="icon-btn">
+        <!-- pin save btn -->
+        <div class="icon-btn">
         <img class="pin-icon" src="./images/pin.png" alt="pin icon">
-      </div>
+        </div>
 
-      <!-- share btn -->
-      <div class="share-btn">
+        <!-- share btn -->
+        <div class="share-btn">
         <img class="share-icon" src="./images/share.png" alt="share icon">
-      </div>
+        </div>
+
+        <!-- share popup -->
+        <div class="share-popup">
+        <div class="share-option">
+            <img src="./images/link.png" alt="copy link">
+            <span>link</span>
+        </div>
+        <div class="share-option">
+            <img src="./images/insta.png" alt="share to instagram">
+            <span>instagram</span>
+        </div>
+        <div class="share-option">
+            <img src="./images/x.png" alt="share to x">
+            <span>X</span>
+        </div>
+        <div class="share-option">
+            <img src="./images/messages.png" alt="share via message">
+            <span>message</span>
+        </div>
+        </div>
     </div>
 
     <!-- card title and option icon -->
     <div class="card-info">
-      <p class="title"><span>roller coaster ride</span></p>
-      <div class="option-btn">
+        <p class="title"><span>roller coaster ride</span></p>
+        <div class="option-btn">
         <img class="option-icon" src="./images/options.png" alt="options three dot icon">
         <span class="tooltip">More actions</span>
-      </div>
+        </div>
     </div>
-  </div>
+    </div>
+
 
   <!-- CARD 2 -->
   <div class="pin-card">
@@ -67,6 +88,26 @@
       <div class="share-btn">
         <img class="share-icon" src="./images/share.png" alt="share icon">
       </div>
+
+        <!-- share popup -->
+        <div class="share-popup">
+        <div class="share-option">
+            <img src="./images/link.png" alt="copy link">
+            <span>link</span>
+        </div>
+        <div class="share-option">
+            <img src="./images/insta.png" alt="share to instagram">
+            <span>instagram</span>
+        </div>
+        <div class="share-option">
+            <img src="./images/x.png" alt="share to x">
+            <span>X</span>
+        </div>
+        <div class="share-option">
+            <img src="./images/messages.png" alt="share via message">
+            <span>message</span>
+        </div>
+        </div>
     </div>
 
     <!-- card title and option icon -->
@@ -102,6 +143,26 @@
       <div class="share-btn">
         <img class="share-icon" src="./images/share.png" alt="share icon">
       </div>
+
+        <!-- share popup -->
+        <div class="share-popup">
+        <div class="share-option">
+            <img src="./images/link.png" alt="copy link">
+            <span>link</span>
+        </div>
+        <div class="share-option">
+            <img src="./images/insta.png" alt="share to instagram">
+            <span>instagram</span>
+        </div>
+        <div class="share-option">
+            <img src="./images/x.png" alt="share to x">
+            <span>X</span>
+        </div>
+        <div class="share-option">
+            <img src="./images/messages.png" alt="share via message">
+            <span>message</span>
+        </div>
+        </div>
     </div>
 
     <!-- card title and option icon -->
@@ -178,6 +239,16 @@
         </div>
 
         <div class="space">
+            <h4>Click On Share Button</h4>
+                <li>Share button decrease in scale and resets back to default scale</li>
+                <li>Popup appears and displays different app options</li>
+
+            <h4>Click Off Share Button</h4>
+                <li>Share button decrease in scale and resets back to default scale</li>
+                <li>Popup disappears</li>
+        </div>        
+
+        <div class="space">
             <h4>Hover On More Actions Button</h4>
                 <li>Change button background color</li>
                 <li>Increase the scale of the icon</li>
@@ -241,6 +312,16 @@
                 <li>Reset share icon scale to default</li>
         </div>
 
+        <div class="space">
+            <h4>Click On Share Button</h4>
+                <li>Share button decrease in scale and resets back to default scale</li>
+                <li>Popup appears and displays different app options</li>
+
+            <h4>Click Off Share Button</h4>
+                <li>Share button decrease in scale and resets back to default scale</li>
+                <li>Popup disappears</li>
+        </div>        
+                
         <div class="space">
             <h4>Hover On More Actions Button</h4>
                 <li>Change button background color</li>
@@ -381,4 +462,25 @@
     requestAnimationFrame(update);
     }
 });
+
+    document.addEventListener('click', function (e) {
+    const shareBtn = e.target.closest('.share-btn');
+    const allPopups = document.querySelectorAll('.share-popup');
+
+    if (shareBtn) {
+        const popup = shareBtn.parentElement.querySelector('.share-popup');
+        const isOpen = popup.classList.contains('show-popup');
+
+        allPopups.forEach(p => p.classList.remove('show-popup'));
+
+        if (!isOpen) {
+        popup.classList.add('show-popup');
+        }
+
+        shareBtn.classList.add('clicked');
+        setTimeout(() => shareBtn.classList.remove('clicked'), 150);
+
+        e.stopPropagation();
+    }
+    });
 </script>

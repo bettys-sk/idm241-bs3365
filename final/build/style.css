@@ -242,6 +242,10 @@ h2:nth-of-type(5) {
     z-index: 10;
 }
 
+.share-btn.clicked {
+  transform: scale(0.9);
+}
+
 .img-tile-container:hover .share-btn {
     opacity: 1;
 }
@@ -431,7 +435,7 @@ h2:nth-of-type(5) {
 }
 
 .pin-card.saved .pin-icon {
-  content: url('../build/images/check.png'); /* your check icon */
+  content: url('../build/images/check.png');
   transform: scale(1.2);
 }
 
@@ -455,6 +459,57 @@ h2:nth-of-type(5) {
   height: 100%;
   pointer-events: none;
   z-index: 19;
+}
+
+/* SHARE POPUP STYLES */
+.share-popup {
+  position: absolute;
+  bottom: 60px;
+  right: 12px;
+  background-color: #ffffff;
+  border: 1px solid #D2D2D2;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  display: none;
+  flex-direction: row;
+  gap: 16px;
+  z-index: 20;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.25s ease;
+}
+
+.share-popup.show-popup {
+  display: flex;
+}
+
+.share-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Manrope, sans-serif;
+  font-size: 12px;
+  color: #2E2E2E;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.share-option img {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 4px;
+}
+
+.share-option:hover {
+  transform: scale(1.1);
+  color: var(--primary-color);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @media (min-width: 1512px) {
