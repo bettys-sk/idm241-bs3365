@@ -326,20 +326,28 @@ h2:nth-of-type(5) {
     );
     transform: skewX(-20deg);
     z-index: 2;
+
+    /* No animation initially */
+    animation: none;
 }
 
-.card-info .title:hover span {
+/* .card-info .title:hover span {
     animation: smoothType 1s ease-out forwards;
-}
+} */
 
 .card-info .title:hover span::before {
+    /* Apply animation on hover */
     animation: shine 1s forwards;
 }
 
-@keyframes smoothType {
+.card-info .title:not(:hover) span::before {
+    animation: none;
+}
+
+/* @keyframes smoothType {
     from { clip-path: inset(0 100% 0 0); }
     to { clip-path: inset(0 0 0 0); }
-}
+} */
 
 @keyframes shine {
     from { left: -100%; }
@@ -439,7 +447,6 @@ h2:nth-of-type(5) {
   transform: scale(1.2);
 }
 
-/* Optional subtle bounce when saved */
 .pin-card.saved .icon-btn {
   background-color: #DAF0FF;
   animation: bounce 0.4s ease;
@@ -500,6 +507,10 @@ h2:nth-of-type(5) {
   width: 32px;
   height: 32px;
   margin-bottom: 4px;
+}
+
+.left-marg {
+    margin-left: 24px;
 }
 
 @keyframes fadeIn {
