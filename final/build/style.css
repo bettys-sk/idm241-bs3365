@@ -24,6 +24,16 @@
   padding: 0;
 }
 
+.overlay,
+.saved-message,
+.confetti {
+    pointer-events: none;
+}
+
+.card-info .title span::before {
+    pointer-events: none;
+}
+
 html{
     --background-color: #FCFBF8;
     --stroke-color: #D2D2D2;
@@ -224,6 +234,7 @@ h2:nth-of-type(5) {
     align-items: center;
     justify-content: center;
     z-index: 10;
+    cursor: pointer;
 }
 
 .share-btn {
@@ -240,6 +251,7 @@ h2:nth-of-type(5) {
     opacity: 0;
     transition: background-color 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
     z-index: 10;
+    cursor: pointer;
 }
 
 .share-btn.clicked {
@@ -255,6 +267,7 @@ h2:nth-of-type(5) {
     width: 20px;
     height: 20px;
     transition: transform 0.25s ease;
+    cursor: pointer;
 }
 
 .share-btn:hover {
@@ -282,6 +295,7 @@ h2:nth-of-type(5) {
     position: static;
     transform: none;
     margin: auto;
+    cursor: pointer;
 }
 
 .card-info {
@@ -289,6 +303,7 @@ h2:nth-of-type(5) {
     margin: 12px 12px 0 0;
     cursor: pointer;
     min-height: 20px;
+    cursor: pointer;
 }
 
 /* title text animation */
@@ -300,6 +315,7 @@ h2:nth-of-type(5) {
     white-space: nowrap;
     display: inline-block;
     position: relative;
+    cursor: pointer;
 }
 
 .card-info .title span {
@@ -309,6 +325,7 @@ h2:nth-of-type(5) {
     width: 100%;
     position: relative;
     z-index: 1;
+    cursor: pointer;
 }
 
 .card-info .title span::before {
@@ -375,6 +392,7 @@ h2:nth-of-type(5) {
     border-radius: 4px;
     width: 32px;
     height: 32px;
+    cursor: pointer;
 }
 
 .option-btn:hover .option-icon {
@@ -401,6 +419,7 @@ h2:nth-of-type(5) {
     opacity: 0;
     transition: opacity 0.2s ease, transform 0.2s ease;
     transform-origin: top center;
+    cursor: pointer;
 }
 
 .option-btn:hover .tooltip {
@@ -426,30 +445,36 @@ h2:nth-of-type(5) {
   pointer-events: none;
   z-index: 20;
   transition: opacity 0.4s ease, transform 0.4s ease;
+  cursor: pointer;
 }
 
 .pin-card.saved .saved-message {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
+  cursor: pointer;
 }
 
 /* --- ICON ANIMATION --- */
 .icon-btn {
   transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
 }
 
 .icon-btn img {
   transition: transform 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
 }
 
 .pin-card.saved .pin-icon {
   content: url('../build/images/check.png');
   transform: scale(1.2);
+  cursor: pointer;
 }
 
 .pin-card.saved .icon-btn {
   background-color: #DAF0FF;
   animation: bounce 0.4s ease;
+  cursor: pointer;
 }
 
 @keyframes bounce {
@@ -466,6 +491,7 @@ h2:nth-of-type(5) {
   height: 100%;
   pointer-events: none;
   z-index: 19;
+  cursor: pointer;
 }
 
 /* SHARE POPUP STYLES */
@@ -485,6 +511,7 @@ h2:nth-of-type(5) {
   align-items: center;
   justify-content: center;
   animation: fadeIn 0.25s ease;
+  cursor: pointer;
 }
 
 .share-popup.show-popup {
@@ -507,15 +534,11 @@ h2:nth-of-type(5) {
   width: 32px;
   height: 32px;
   margin-bottom: 4px;
+  cursor: pointer;
 }
 
 .left-marg {
     margin-left: 24px;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 @media (min-width: 1512px) {
@@ -550,3 +573,84 @@ h2:nth-of-type(5) {
         grid-template-columns: repeat(1, 1fr);
     }
 }
+
+        #nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: none;
+            background: linear-gradient(
+            120deg,
+            #fbeaff,
+            #e4f0ff,
+            #eafff4,
+            #fff7f2
+            );    
+            background-size: 300% 300%;
+            animation: gradientMove 6s ease infinite;
+            z-index: 9999;
+            overflow: hidden;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        #nav-overlay .nav-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: Manrope, sans-serif;
+            z-index: 5;
+        }
+
+        #nav-overlay h1 {
+            font-size: 48px;
+            font-weight: 600;
+            color: var(--primary-color);
+            animation: fadeInOut 1.6s ease-in-out infinite alternate;
+        }
+
+        @keyframes fadeInOut {
+            from { opacity: 0.4; transform: translateY(4px); }
+            to   { opacity: 1; transform: translateY(-3px); }
+        }
+
+        #nav-overlay.fade-out {
+    animation: overlayFadeOut 0.8s ease forwards;
+}
+
+@keyframes overlayFadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; visibility: hidden; }
+}
+
+        /* Whoosh halo effect */
+        #nav-overlay .whoosh {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: radial-gradient(
+                circle,
+                rgba(255,255,255,0.22) 0%,
+                rgba(255,255,255,0) 70%
+            );
+            animation: whooshMove 2.2s ease-out forwards;
+            z-index: 2;
+        }
+
+        @keyframes whooshMove {
+            0% { transform: scale(0.3) rotate(0deg); opacity: 0.7; }
+            60% { transform: scale(1.6) rotate(30deg); opacity: 0.35; }
+            100% { transform: scale(2.2) rotate(60deg); opacity: 0; }
+        }

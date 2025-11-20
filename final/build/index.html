@@ -176,6 +176,13 @@
   </div>
 </div>
 
+<div id="nav-overlay">
+    <div class="whoosh"></div>
+    <div class="shimmer"></div>
+    <div class="nav-content">
+        <h1>Taking You Right There...</h1>
+    </div>
+</div>
 
 <hr>
 
@@ -385,6 +392,13 @@
         </ul>
 <!-- Microinteraction Description -->
 
+<div id="nav-overlay">
+    <div class="nav-content">
+        <h1>Navigating…</h1>
+        <div class="shimmer"></div>
+    </div>
+</div>
+
 </body>
 </html>
 
@@ -501,4 +515,46 @@
         e.stopPropagation();
     }
     });
+
+
+
+document.querySelectorAll('.card-info .title').forEach(title => {
+    title.addEventListener('click', () => {
+
+        const overlay = document.getElementById("nav-overlay");
+        const whoosh = overlay.querySelector(".whoosh");
+
+        // 1. Show the overlay
+        overlay.style.display = "block";
+
+        // 2. Wait for the whoosh animation to finish
+        const onWhooshEnd = (event) => {
+            if (event.animationName === "whooshMove") {
+
+                // Open Pinterest in new tab
+                window.open("https://www.pinterest.com/", "_blank");
+
+                // Start fade-out
+                overlay.classList.add("fade-out");
+
+                // Stop listening to whoosh
+                whoosh.removeEventListener("animationend", onWhooshEnd);
+            }
+        };
+
+        whoosh.addEventListener("animationend", onWhooshEnd);
+
+        // 3. When the fade-out animation finishes, hide overlay
+        const onFadeEnd = (event) => {
+            if (event.animationName === "overlayFadeOut") {
+                overlay.style.display = "none";
+                overlay.classList.remove("fade-out");
+                overlay.removeEventListener("animationend", onFadeEnd);
+            }
+        };
+
+        overlay.addEventListener("animationend", onFadeEnd);
+
+    });
+});
 </script>
