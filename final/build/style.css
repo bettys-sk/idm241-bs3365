@@ -24,14 +24,24 @@
   padding: 0;
 }
 
+/* CLICKABLE ELEMENTS */
+.img-tile-container,
+.img-tile,
 .overlay,
-.saved-message,
-.confetti {
-    pointer-events: none;
+.icon-btn,
+.share-btn,
+.share-option,
+.card-info .title,
+.option-btn {
+    cursor: pointer;
 }
 
-.card-info .title span::before {
-    pointer-events: none;
+/* NON-CLICKABLE ELEMENTS */
+.saved-message,
+.confetti,
+.tooltip,
+.share-popup {
+    cursor: default !important;
 }
 
 html{
@@ -188,7 +198,6 @@ h2:nth-of-type(5) {
 .pin-card {
     position: relative;
     display: block;
-    cursor: pointer;
 }
 
 .img-tile-container {
@@ -301,9 +310,7 @@ h2:nth-of-type(5) {
 .card-info {
     position: relative;
     margin: 12px 12px 0 0;
-    cursor: pointer;
     min-height: 20px;
-    cursor: pointer;
 }
 
 /* title text animation */
@@ -419,7 +426,6 @@ h2:nth-of-type(5) {
     opacity: 0;
     transition: opacity 0.2s ease, transform 0.2s ease;
     transform-origin: top center;
-    cursor: pointer;
 }
 
 .option-btn:hover .tooltip {
@@ -445,7 +451,6 @@ h2:nth-of-type(5) {
   pointer-events: none;
   z-index: 20;
   transition: opacity 0.4s ease, transform 0.4s ease;
-  cursor: pointer;
 }
 
 .pin-card.saved .saved-message {
@@ -491,7 +496,6 @@ h2:nth-of-type(5) {
   height: 100%;
   pointer-events: none;
   z-index: 19;
-  cursor: pointer;
 }
 
 /* SHARE POPUP STYLES */
@@ -511,7 +515,6 @@ h2:nth-of-type(5) {
   align-items: center;
   justify-content: center;
   animation: fadeIn 0.25s ease;
-  cursor: pointer;
 }
 
 .share-popup.show-popup {
@@ -574,83 +577,87 @@ h2:nth-of-type(5) {
     }
 }
 
-        #nav-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            display: none;
-            background: linear-gradient(
+#nav-overlay,
+#nav-overlay * {
+    pointer-events: none;
+}
+    #nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: none;
+        background: linear-gradient(
             120deg,
             #fbeaff,
             #e4f0ff,
             #eafff4,
             #fff7f2
-            );    
-            background-size: 300% 300%;
-            animation: gradientMove 6s ease infinite;
-            z-index: 9999;
-            overflow: hidden;
-        }
+        );
+        background-size: 300% 300%;
+        animation: gradientMove 6s ease infinite;
+        z-index: 9999;
+        overflow: hidden;
+    }
 
-        @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+    @keyframes gradientMove {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
 
-        #nav-overlay .nav-content {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-family: Manrope, sans-serif;
-            z-index: 5;
-        }
+    #nav-overlay .nav-content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-family: Manrope, sans-serif;
+        z-index: 5;
+    }
 
-        #nav-overlay h1 {
-            font-size: 48px;
-            font-weight: 600;
-            color: var(--primary-color);
-            animation: fadeInOut 1.6s ease-in-out infinite alternate;
-        }
+    #nav-overlay h1 {
+        font-size: 48px;
+        font-weight: 600;
+        color: var(--primary-color);
+        animation: fadeInOut 1.6s ease-in-out infinite alternate;
+    }
 
-        @keyframes fadeInOut {
-            from { opacity: 0.4; transform: translateY(4px); }
-            to   { opacity: 1; transform: translateY(-3px); }
-        }
+    @keyframes fadeInOut {
+        from { opacity: 0.4; transform: translateY(4px); }
+        to   { opacity: 1; transform: translateY(-3px); }
+    }
 
-        #nav-overlay.fade-out {
-    animation: overlayFadeOut 0.8s ease forwards;
-}
+    #nav-overlay.fade-out {
+        animation: overlayFadeOut 0.8s ease forwards;
+    }
 
-@keyframes overlayFadeOut {
-    from { opacity: 1; }
-    to   { opacity: 0; visibility: hidden; }
-}
+    @keyframes overlayFadeOut {
+        from { opacity: 1; }
+        to   { opacity: 0; visibility: hidden; }
+    }
 
-        /* Whoosh halo effect */
-        #nav-overlay .whoosh {
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            top: -50%;
-            left: -50%;
-            background: radial-gradient(
-                circle,
-                rgba(255,255,255,0.22) 0%,
-                rgba(255,255,255,0) 70%
-            );
-            animation: whooshMove 2.2s ease-out forwards;
-            z-index: 2;
-        }
+    /* Whoosh halo effect */
+    #nav-overlay .whoosh {
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        top: -50%;
+        left: -50%;
+        background: radial-gradient(
+            circle,
+            rgba(255,255,255,0.22) 0%,
+            rgba(255,255,255,0) 70%
+        );
+        animation: whooshMove 2.2s ease-out forwards;
+        z-index: 2;
+    }
 
-        @keyframes whooshMove {
-            0% { transform: scale(0.3) rotate(0deg); opacity: 0.7; }
-            60% { transform: scale(1.6) rotate(30deg); opacity: 0.35; }
-            100% { transform: scale(2.2) rotate(60deg); opacity: 0; }
-        }
+    @keyframes whooshMove {
+        0% { transform: scale(0.3) rotate(0deg); opacity: 0.7; }
+        60% { transform: scale(1.6) rotate(30deg); opacity: 0.35; }
+        100% { transform: scale(2.2) rotate(60deg); opacity: 0; }
+    }
