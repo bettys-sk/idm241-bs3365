@@ -1,0 +1,232 @@
+@font-face {
+    font-family: Stick No Bills;
+    src: url(./typography/Stick\ No\ Bills\ Variable\ Font.woff2);
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Geist Mono;
+    src: url(./typography/Geist\ Mono\ Variable\ Font.woff2);
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html{
+    --background-color: #F8F6F3;
+    --stroke-color: #D2D2D2;
+    --primary-color: #47799A;
+    --hover-color: #6A7D4F;
+    --pararaph-color: #2E2E2E;
+
+    background-color: var(--background-color);
+}
+
+h1 {
+    font-family: Stick No Bills, 'Times New Roman', Times, serif;
+    font-size: 62px;
+    color: var(--primary-color);
+}
+
+h2 {
+    font-family: Stick No Bills, 'Times New Roman', Times, serif;
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+h3 {
+    font-family: Stick No Bills, 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-top: 8px;
+}
+
+h4 {
+    font-family: Stick No Bills, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: var(--primary-color);
+    margin: 16px 0 8px 0;
+}
+
+p {
+    font-family: Geist Mono, 'Courier New', Courier, monospace;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: -.7px;
+    line-height: 20px;
+    color: var(--pararaph-color);
+}
+
+ul {
+  list-style-position: inside;
+  padding-left: 0;
+  margin-left: 12px;
+}
+
+li  {
+    font-family: Geist Mono, 'Courier New', Courier, monospace;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: -.7px;
+    line-height: 20px;
+    color: var(--pararaph-color);
+}
+
+.li-space-1 {
+    margin-top: 4px;
+    margin-left: 32px;
+}
+
+.li-space-2 {
+    margin-top: 4px;
+    margin-left: 32px;
+    margin-bottom: 32px;
+}
+
+.p-space {
+    margin-top: 16px;
+}
+
+.p-c-t-space {
+    margin-top: 32px;
+}
+
+.p-c-space {
+    margin-top: 12px;
+}
+
+.p-b-space {
+    margin-top: 16px;
+    margin-bottom: 32px;
+}
+
+a.hover-link {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.hover-link:hover {
+    color: var(--hover-color);
+    text-decoration: underline;
+}
+
+/* .hover-link:visited {
+    color: #4A4A4A;
+} */
+
+.index-hover-link {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.index-hover-link:hover {
+    color: var(--hover-color);
+    text-decoration: underline;
+}
+
+h2:nth-of-type(2),
+h2:nth-of-type(3),
+h2:nth-of-type(4),
+h2:nth-of-type(5) {
+    margin-top: 32px;
+}
+
+.og-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 42px;
+}
+
+.index-og-link-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 42px 0 24px 0;
+}
+
+.index-og-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 24px 0 24px 0;
+}
+
+.index-arrow-icon {
+    width: 24px;
+    height: auto;
+    padding-top: 4px;
+}
+
+.arrow-icon {
+    width: 24px;
+    height: auto;
+    /* padding-top: 8px; */
+    color: var(--primary-color);
+}
+
+.gif {
+    display: block;
+    width: 400px;
+    height: auto;
+    margin: 42px auto 0;
+    border-radius: 8px;
+}
+
+.hero {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: solid 4px var(--primary-color);
+    margin-bottom: 32px;
+}
+
+.process {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: solid 4px var(--primary-color);
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.space {
+    margin-bottom: 42px;
+}
+
+hr {
+    border: none;
+    border-top: 2px dotted #47799A;
+    margin: 42px 0 42px 0;
+}
+
+@media (min-width: 1512px) {
+    body {
+        margin-inline: 62px;
+        margin-block: 62px;
+    }
+}
+
+@media (min-width: 834px) and (max-width: 1512px) {
+    body {
+        margin-inline: 62px;
+        margin-block: 62px;
+    }
+}
+
+@media (min-width: 330px) and (max-width: 834px) {
+    body {
+        margin-inline: 42px;
+        margin-block: 42px;
+    }
+}
